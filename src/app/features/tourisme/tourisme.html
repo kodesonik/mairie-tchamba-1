@@ -1,0 +1,63 @@
+<div class="bg-gray-50 min-h-screen py-12">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4 animate-fade-in-up">Tourisme & Culture</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+                Découvrez les richesses de Tchamba, une terre d'accueil, d'histoire et de traditions vivantes.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div *ngFor="let site of sites"
+                class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div class="h-56 overflow-hidden relative">
+                    <!-- Placeholder image if generic asset used, realistically strictly using supplied assets -->
+                    <img src="assets/images.jpg" [alt]="site.title"
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <span
+                            class="text-xs font-bold uppercase tracking-wider bg-tchamba-yellow text-tchamba-green px-2 py-1 rounded-sm mb-2 inline-block">Visite</span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-tchamba-green transition-colors">{{
+                        site.title }}</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">{{ site.description }}</p>
+                    <button
+                        class="text-tchamba-green font-bold text-sm uppercase tracking-wide flex items-center group/btn">
+                        Découvrir
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20">
+            <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl overflow-hidden shadow-xl">
+                <div class="w-full md:w-1/2 h-64 md:h-auto relative">
+                    <img src="assets/images.jpg" alt="Culture Tchamba" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 p-8 md:p-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Un Patrimoine Culturel Unique</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Tchamba est le berceau d'une culture riche, marquée par la diversité ethnique et religieuse.
+                        Le brassage culturel se reflète dans nos fêtes traditionnelles, notre artisanat et notre
+                        gastronomie.
+                        Ne manquez pas de goûter aux spécialités locales et de visiter nos marchés animés.
+                    </p>
+                    <a routerLink="/contact"
+                        class="inline-block px-6 py-3 border-2 border-tchamba-green text-tchamba-green font-bold rounded-full hover:bg-tchamba-green hover:text-white transition-colors">
+                        Organiser ma visite
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="bg-gray-50 min-h-screen py-12">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4 animate-fade-in-up">Services Municipaux</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+                Faciliter vos démarches administratives est notre priorité. Retrouvez ici l'ensemble des services
+                disponibles.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div *ngFor="let service of services"
+                class="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow flex items-start gap-6 border border-gray-100">
+                <div
+                    class="flex-shrink-0 h-16 w-16 bg-green-50 rounded-full flex items-center justify-center text-tchamba-green">
+                    <!-- Render SVG icon dynamically or using innerHTML if trusted, but for now assuming simple check/icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="service.icon" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">{{ service.title }}</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">{{ service.description }}</p>
+                    <a routerLink="/contact"
+                        class="text-tchamba-green font-semibold hover:text-tchamba-yellow transition-colors text-sm flex items-center">
+                        En savoir plus
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 bg-tchamba-green rounded-2xl p-8 md:p-12 text-center text-white max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Besoin d'une assistance personnalisée ?</h2>
+            <p class="text-lg text-green-100 mb-8 max-w-2xl mx-auto">
+                Nos agents sont à votre disposition pour vous guider dans vos démarches. N'hésitez pas à nous contacter
+                ou à vous rendre en mairie.
+            </p>
+            <a routerLink="/contact"
+                class="inline-block px-8 py-3 bg-white text-tchamba-green font-bold rounded-full hover:bg-tchamba-yellow hover:text-tchamba-green transition-all transform hover:scale-105 shadow-lg">
+                Nous Contacter
+            </a>
+        </div>
+
+    </div>
+</div>
