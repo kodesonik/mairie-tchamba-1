@@ -3,13 +3,33 @@ import { HomeComponent } from './features/home/home';
 import { MairieComponent } from './features/mairie/mairie';
 import { ServicesComponent } from './features/services/services';
 import { TourismeComponent } from './features/tourisme/tourisme';
+import { TourismeDetailComponent } from './features/tourisme/tourisme-detail/tourisme-detail';
 import { ContactComponent } from './features/contact/contact';
+import { CommuniquesComponent } from './features/communiques/communiques';
+import { ConseilComponent } from './features/conseil/conseil';
+import { RecettesComponent } from './features/recettes/recettes';
+import { AppelsOffresComponent } from './features/appels-offres/appels-offres';
+import { ProjetsComponent } from './features/projets/projets';
+import { InfosPratiquesComponent } from './features/infos-pratiques/infos-pratiques';
+import { OrganigrammeComponent } from './features/organigramme/organigramme';
+import { BlogComponent } from './features/blog/blog';
+import { BlogDetailComponent } from './features/blog/blog-detail/blog-detail';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'mairie', component: MairieComponent },
     { path: 'services', component: ServicesComponent },
     { path: 'tourisme', component: TourismeComponent },
+    { path: 'tourisme/:id', component: TourismeDetailComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'communiques', component: CommuniquesComponent },
+    { path: 'conseil', component: ConseilComponent },
+    { path: 'recettes', component: RecettesComponent },
+    { path: 'appels-offres', component: AppelsOffresComponent },
+    { path: 'projets', component: ProjetsComponent },
+    { path: 'infos-pratiques', component: InfosPratiquesComponent },
+    { path: 'organigramme', component: OrganigrammeComponent },
+    { path: 'blog', component: BlogComponent },
+    { path: 'blog/:id', component: BlogDetailComponent },
     { path: '**', redirectTo: '' }
 ];

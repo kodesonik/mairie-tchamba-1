@@ -1,0 +1,89 @@
+<div class="bg-gray-50 min-h-screen py-12">
+    <div class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center h-16 w-16 bg-tchamba-yellow/20 rounded-full mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tchamba-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Conseil Municipal</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Sessions, délibérations et décisions du conseil municipal de la Commune Tchamba 1.
+            </p>
+        </div>
+
+        <!-- Breadcrumb -->
+        <nav class="mb-8">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a routerLink="/" class="hover:text-tchamba-green">Accueil</a></li>
+                <li><span>/</span></li>
+                <li class="text-tchamba-green font-medium">Conseil Municipal</li>
+            </ol>
+        </nav>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Sessions List -->
+            <div class="lg:col-span-2 space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Sessions du Conseil</h2>
+
+                <div *ngFor="let session of sessions"
+                    class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full"
+                                [class.bg-tchamba-green]="session.status === 'À venir'"
+                                [class.text-white]="session.status === 'À venir'"
+                                [class.bg-gray-100]="session.status === 'Terminée'"
+                                [class.text-gray-600]="session.status === 'Terminée'">
+                                {{ session.status }}
+                            </span>
+                            <span class="text-sm text-gray-500">{{ session.date }}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ session.title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ session.description }}</p>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span *ngFor="let doc of session.documents"
+                                class="inline-flex items-center text-sm text-tchamba-green bg-green-50 px-3 py-1 rounded-full cursor-pointer hover:bg-tchamba-green hover:text-white transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                                {{ doc }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar - Membres -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-sm p-6 sticky top-24">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6 border-b pb-2">Membres du Conseil</h2>
+                    <ul class="space-y-4">
+                        <li *ngFor="let membre of membres" class="flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-full overflow-hidden bg-gray-200 flex items-center justify-center">
+                                <img *ngIf="membre.photo" [src]="membre.photo" [alt]="membre.nom" class="w-full h-full object-cover">
+                                <span *ngIf="!membre.photo" class="text-gray-500 font-bold text-sm">{{ membre.nom.charAt(0) }}</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800 text-sm">{{ membre.nom }}</p>
+                                <p class="text-xs text-gray-500">{{ membre.fonction }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Link -->
+        <div class="mt-12 text-center">
+            <a routerLink="/" class="inline-flex items-center text-tchamba-green font-semibold hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Retour à l'accueil
+            </a>
+        </div>
+    </div>
+</div>

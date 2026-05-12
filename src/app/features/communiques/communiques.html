@@ -1,0 +1,67 @@
+<div class="bg-gray-50 min-h-screen py-12">
+    <div class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center h-16 w-16 bg-tchamba-green/10 rounded-full mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tchamba-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                </svg>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Communiqués Officiels</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Avis à la population, annonces importantes et informations officielles de la Mairie de Tchamba.
+            </p>
+        </div>
+
+        <!-- Breadcrumb -->
+        <nav class="mb-8">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a routerLink="/" class="hover:text-tchamba-green">Accueil</a></li>
+                <li><span>/</span></li>
+                <li class="text-tchamba-green font-medium">Communiqués</li>
+            </ol>
+        </nav>
+
+        <!-- Communiqués List -->
+        <div class="space-y-6">
+            <div *ngFor="let communique of communiques"
+                class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                [class.border-l-4]="communique.important"
+                [class.border-tchamba-red]="communique.important">
+                <div class="p-6">
+                    <div class="flex flex-wrap items-center gap-3 mb-3">
+                        <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full"
+                            [class.bg-tchamba-green]="communique.important"
+                            [class.text-white]="communique.important"
+                            [class.bg-gray-100]="!communique.important"
+                            [class.text-gray-600]="!communique.important">
+                            {{ communique.category }}
+                        </span>
+                        <span class="text-sm text-gray-500">{{ communique.date }}</span>
+                        <span *ngIf="communique.important" class="text-xs font-bold text-tchamba-red uppercase">Important</span>
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2 hover:text-tchamba-green transition-colors cursor-pointer">
+                        {{ communique.title }}
+                    </h2>
+                    <p class="text-gray-600 mb-4">{{ communique.excerpt }}</p>
+                    <button class="text-tchamba-green font-semibold text-sm hover:underline inline-flex items-center">
+                        Lire le communiqué complet
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Link -->
+        <div class="mt-12 text-center">
+            <a routerLink="/" class="inline-flex items-center text-tchamba-green font-semibold hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Retour à l'accueil
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+<div class="bg-gray-50 min-h-screen py-12">
+    <div class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center justify-center h-16 w-16 bg-tchamba-green/10 rounded-full mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tchamba-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Organigramme</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Structure organisationnelle de la Mairie de Tchamba 1
+            </p>
+        </div>
+
+        <!-- Breadcrumb -->
+        <nav class="mb-8">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a routerLink="/" class="hover:text-tchamba-green">Accueil</a></li>
+                <li><span>/</span></li>
+                <li><a routerLink="/mairie" class="hover:text-tchamba-green">La Mairie</a></li>
+                <li><span>/</span></li>
+                <li class="text-tchamba-green font-medium">Organigramme</li>
+            </ol>
+        </nav>
+
+        <!-- Organigramme -->
+        <div class="space-y-8">
+
+            <!-- Niveau 1: Maire -->
+            <div class="flex justify-center">
+                <div class="bg-tchamba-green text-white rounded-2xl p-6 shadow-xl text-center min-w-[280px]">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                        <img [src]="executif.maire.photo" alt="Photo du Maire" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold">{{ executif.maire.nom }}</h3>
+                    <p class="text-tchamba-yellow font-medium">{{ executif.maire.poste }}</p>
+                </div>
+            </div>
+
+            <!-- Ligne de connexion -->
+            <div class="flex justify-center">
+                <div class="w-0.5 h-8 bg-gray-300"></div>
+            </div>
+
+            <!-- Niveau 2: Adjoints -->
+            <div class="flex justify-center">
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div *ngFor="let adjoint of executif.adjoints"
+                        class="bg-white rounded-xl p-5 shadow-lg text-center border-t-4 border-tchamba-yellow min-w-[220px]">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden" *ngIf="adjoint.photo">
+                            <img [src]="adjoint.photo" [alt]="adjoint.nom" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-tchamba-yellow/20 flex items-center justify-center" *ngIf="!adjoint.photo">
+                            <span class="text-2xl font-bold text-tchamba-yellow">{{ adjoint.nom.charAt(3) }}</span>
+                        </div>
+                        <h4 class="font-bold text-gray-800">{{ adjoint.nom }}</h4>
+                        <p class="text-sm text-gray-500">{{ adjoint.poste }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ligne de connexion -->
+            <div class="flex justify-center">
+                <div class="w-0.5 h-8 bg-gray-300"></div>
+            </div>
+
+            <!-- Niveau 3: Secrétariat Général -->
+            <div class="flex justify-center">
+                <div class="bg-gray-800 text-white rounded-xl p-5 shadow-lg text-center min-w-[280px]">
+                    <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-white/20 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-lg">{{ secretariat.nom }}</h4>
+                    <p class="text-sm text-gray-300">{{ secretariat.poste }}</p>
+                </div>
+            </div>
+
+            <!-- Ligne de connexion vers commissions -->
+            <div class="flex justify-center">
+                <div class="w-0.5 h-8 bg-gray-300"></div>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-3/4 h-0.5 bg-gray-300"></div>
+            </div>
+
+            <!-- Niveau 4: Commissions -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div *ngFor="let commission of commissions"
+                    class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <!-- En-tête Commission -->
+                    <div class="p-5 text-white"
+                        [class.bg-blue-600]="commission.couleur === 'blue'"
+                        [class.bg-green-600]="commission.couleur === 'green'"
+                        [class.bg-purple-600]="commission.couleur === 'purple'">
+                        <h4 class="font-bold text-sm leading-tight mb-2">{{ commission.nom }}</h4>
+                        <div class="flex items-center gap-2 mt-3 pt-3 border-t border-white/30">
+                            <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-xs font-bold">
+                                {{ commission.president.charAt(3) }}
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sm">{{ commission.president }}</p>
+                                <p class="text-xs opacity-80">Président</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rapporteurs -->
+                    <div class="p-4 border-b">
+                        <h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Rapporteur(s)</h5>
+                        <div *ngFor="let rapporteur of commission.rapporteurs" class="flex items-center gap-3 mb-2 last:mb-0">
+                            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-600">
+                                {{ rapporteur.nom.charAt(3) }}
+                            </div>
+                            <div>
+                                <p class="font-medium text-sm text-gray-800">{{ rapporteur.nom }}</p>
+                                <p class="text-xs text-gray-500">{{ rapporteur.poste }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Responsables -->
+                    <div class="p-4 bg-gray-50">
+                        <h5 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Responsables</h5>
+                        <div class="space-y-3">
+                            <div *ngFor="let responsable of commission.responsables" class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 overflow-hidden" *ngIf="responsable.photo">
+                                    <img [src]="responsable.photo" [alt]="responsable.nom" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold text-white"
+                                    *ngIf="!responsable.photo"
+                                    [class.bg-blue-400]="commission.couleur === 'blue'"
+                                    [class.bg-green-400]="commission.couleur === 'green'"
+                                    [class.bg-purple-400]="commission.couleur === 'purple'">
+                                    {{ responsable.nom.charAt(3) === '.' ? responsable.nom.charAt(4) : responsable.nom.charAt(3) }}
+                                </div>
+                                <div>
+                                    <p class="font-medium text-sm text-gray-800">{{ responsable.nom }}</p>
+                                    <p class="text-xs text-gray-500 leading-tight">{{ responsable.poste }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Légende -->
+        <div class="mt-12 bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="font-bold text-gray-800 mb-4">Légende</h3>
+            <div class="flex flex-wrap gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-tchamba-green"></div>
+                    <span class="text-sm text-gray-600">Exécutif Municipal</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-tchamba-yellow"></div>
+                    <span class="text-sm text-gray-600">Adjoints au Maire</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-gray-800"></div>
+                    <span class="text-sm text-gray-600">Secrétariat Général</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-blue-600"></div>
+                    <span class="text-sm text-gray-600">Commission Économique</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-green-600"></div>
+                    <span class="text-sm text-gray-600">Commission Domaniale</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded bg-purple-600"></div>
+                    <span class="text-sm text-gray-600">Commission Sociale</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Link -->
+        <div class="mt-12 text-center">
+            <a routerLink="/mairie" class="inline-flex items-center text-tchamba-green font-semibold hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Retour à La Mairie
+            </a>
+        </div>
+    </div>
+</div>

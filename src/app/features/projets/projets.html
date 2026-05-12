@@ -1,0 +1,85 @@
+<div class="bg-gray-50 min-h-screen pt-24 pb-12">
+    <div class="container mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projets & Réalisations</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Découvrez les projets en cours et réalisations de la commune de Tchamba.
+            </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div *ngFor="let projet of projets"
+                class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow p-6">
+                <!-- Header with badges -->
+                <div class="flex justify-between items-start mb-4">
+                    <!-- Status Badge -->
+                    <span class="text-xs font-medium px-3 py-1 rounded-full"
+                        [ngClass]="{
+                            'bg-blue-100 text-blue-600': projet.statut === 'En cours',
+                            'bg-green-100 text-green-600': projet.statut === 'Terminé',
+                            'bg-orange-100 text-orange-600': projet.statut === 'Planifié'
+                        }">
+                        {{ projet.statut }}
+                    </span>
+                    <!-- Category Badge -->
+                    <span class="text-xs text-gray-500 px-3 py-1 border border-gray-200 rounded-full">
+                        {{ projet.categorie }}
+                    </span>
+                </div>
+
+                <!-- Title -->
+                <h3 class="text-lg font-bold text-gray-800 mb-3">
+                    {{ projet.titre }}
+                </h3>
+
+                <!-- Description -->
+                <p class="text-sm text-gray-600 mb-6 line-clamp-2">
+                    {{ projet.description }}
+                </p>
+
+                <!-- Progress Bar -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm text-gray-500">Progression</span>
+                        <span class="text-sm font-semibold"
+                            [ngClass]="{
+                                'text-blue-600': projet.statut === 'En cours',
+                                'text-green-600': projet.statut === 'Terminé',
+                                'text-orange-600': projet.statut === 'Planifié'
+                            }">
+                            {{ projet.progression }}%
+                        </span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="h-2 rounded-full transition-all duration-500"
+                            [ngClass]="{
+                                'bg-blue-500': projet.statut === 'En cours',
+                                'bg-green-500': projet.statut === 'Terminé',
+                                'bg-orange-500': projet.statut === 'Planifié'
+                            }"
+                            [style.width.%]="projet.progression">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-16 bg-tchamba-green rounded-2xl p-8 md:p-12 text-white text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Vous avez un projet pour Tchamba ?</h2>
+            <p class="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+                La mairie est ouverte aux partenariats avec les ONG, entreprises et bailleurs de fonds
+                pour le développement de notre commune.
+            </p>
+            <a routerLink="/contact"
+                class="inline-flex items-center px-8 py-3 bg-white text-tchamba-green font-bold rounded-full hover:bg-tchamba-yellow transition-colors">
+                Contactez-nous
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
