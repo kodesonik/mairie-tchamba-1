@@ -126,6 +126,36 @@ L'étape de Dagma s'est déroulée en présence des responsables d'établissemen
       tags: ['Cohésion sociale', 'Civisme', 'Jeunesse', 'Paix', 'Dagma']
     },
     {
+      id: 'developpement-urbain-plu',
+      titre: 'Développement urbain : Tchamba 1 trace sa vision à long terme grâce au PLU',
+      sousTitre: 'Tchamba 1 / Aménagement du territoire',
+      date: '7 mai 2026',
+      auteur: 'Bureau de l\'Information et de la Presse / Tchamba 1',
+      resume: 'La commune de Tchamba 1 a franchi une étape importante dans la planification de son développement urbain avec la tenue d\'un atelier technique consacré à la validation de son Plan Local d\'Urbanisme (PLU), prévu pour une durée de quinze ans.',
+      contenu: `La commune de Tchamba 1 vient de franchir une étape importante dans la planification de son développement urbain. Un atelier technique consacré à la validation du Plan Local d'Urbanisme (PLU) s'est tenu ce jeudi 7 mai 2026 à Tchamba.
+
+Cette rencontre a mobilisé les différentes parties prenantes impliquées dans l'élaboration du document, notamment une délégation du ministère de l'Aménagement territorial et de l'Urbanisme, des conseillers municipaux, des chefs traditionnels ainsi que plusieurs acteurs du développement local.
+
+Les travaux ont permis de présenter les résultats du diagnostic territorial ainsi que les grandes orientations stratégiques du PLU de Tchamba 1. Ils ont également offert aux participants l'occasion d'examiner le projet de Plan Local d'Urbanisme élaboré par le groupement CID BETA, cabinet chargé de la réalisation du document, et de formuler des observations et recommandations en vue de sa validation.
+
+Véritable outil de planification et de gestion territoriale, le Plan Local d'Urbanisme organise l'occupation de l'espace communal et fixe les règles en matière d'aménagement, d'utilisation des sols et de développement urbain. Sa validation permettra à la commune de mieux maîtriser son expansion urbaine, de prévenir les occupations anarchiques, d'améliorer les infrastructures et de renforcer son attractivité pour les investissements publics et privés.
+
+Prenant la parole à cette occasion, le directeur chargé du développement de l'urbanisme au ministère de l'Aménagement territorial et de l'Urbanisme, M. Issa Tchanilé, a rappelé que l'élaboration de ce document stratégique s'inscrit dans le cadre d'un projet gouvernemental visant à doter treize communes du pays, dont Tchamba 1, d'un Plan Local d'Urbanisme. Il a exprimé sa gratitude à l'ensemble des acteurs impliqués, particulièrement au maire de la commune, pour leur engagement dans la réussite du projet.
+
+Pour sa part, le maire de Tchamba 1, M. Hamza Titikpina, a adressé ses remerciements au Président du Conseil, Faure Essozimna Gnassingbé, pour cette initiative structurante. Selon lui, ce document constituera un repère essentiel pour le conseil municipal dans la conduite de sa politique d'aménagement du territoire. Il a également salué les contributions de toutes les parties prenantes ayant participé à l'élaboration du PLU.
+
+Le Plan Local d'Urbanisme de la commune de Tchamba 1 est prévu pour une durée de quinze ans et demeurera en vigueur jusqu'en 2041.`,
+      imagePrincipale: 'assets/blog-8/blog8-1.jpg',
+      images: [
+        'assets/blog-8/blog8-1.jpg',
+        'assets/blog-8/blog8-2.jpg',
+        'assets/blog-8/blog8-3.jpg',
+        'assets/blog-8/blog8-4.jpg'
+      ],
+      videos: [],
+      tags: ['Aménagement du territoire', 'Urbanisme', 'PLU', 'Développement']
+    },
+    {
       id: 'togo-propre-salubrite',
       titre: 'Forte mobilisation citoyenne autour de l\'opération nationale de salubrité « Togo Propre »',
       sousTitre: 'Tchamba 1 / Salubrité',
