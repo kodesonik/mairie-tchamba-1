@@ -20,6 +20,112 @@ export interface Article {
 export class BlogService {
   private articles: Article[] = [
     {
+      id: 'bac1-concentration-perseverance',
+      titre: '« Concentration et persévérance » : le message des autorités aux candidats du BAC 1',
+      sousTitre: 'Tchamba / Éducation',
+      date: '19 mai 2026',
+      auteur: 'Samuel MADO',
+      resume: 'Le préfet de Tchamba, El-hadj Issaka Laguebande, accompagné du maire de Tchamba 1, Hamza Titikpina, a visité le centre d\'écrit du Baccalauréat première partie (BAC 1) pour encourager les candidats et témoigner du soutien du gouvernement.',
+      contenu: `Le préfet de Tchamba, El-hadj Issaka Laguebande, accompagné du maire de la commune de Tchamba 1, Monsieur Hamza Titikpina, a effectué, ce mardi 19 mai 2026, une visite au centre d'écrit de l'examen du Baccalauréat première partie (BAC 1) de Tchamba.
+
+Cette descente avait pour objectif de constater de visu le démarrage effectif des épreuves dans l'ensemble des centres d'examen et de témoigner aux candidats le soutien du gouvernement. Elle a également permis aux officiels de s'assurer que les épreuves se déroulent dans de bonnes conditions.
+
+Le préfet Issaka a félicité les candidats pour leur assiduité tout au long de l'année scolaire. Il les a exhortés à faire preuve de concentration, à lire attentivement les sujets sans précipitation et à donner le meilleur d'eux-mêmes. « Notre vœu le plus ardent est que vous figuriez parmi les meilleurs au plan national », a-t-il déclaré.
+
+De son côté, le maire Hamza Titikpina a rappelé aux candidats que l'examen n'est pas un obstacle, mais plutôt une occasion de démontrer le sérieux et les efforts consentis durant l'année. « Il s'agit pour vous de restituer ce que vous avez appris, lu et exercé. Je suis convaincu que cela ne constituera pas une difficulté pour vous », a-t-il affirmé.
+
+Le BAC 1 est un examen décisif qui ouvre les portes de la classe de terminale. Au niveau préfectoral, 775 candidats, dont 374 filles, sont en lice pour décrocher ce précieux sésame.`,
+      imagePrincipale: 'assets/blog-5/blog5-1.jpg',
+      images: [
+        'assets/blog-5/blog5-1.jpg',
+        'assets/blog-5/blog5-2.jpg',
+        'assets/blog-5/blog5-3.jpg',
+        'assets/blog-5/blog5-4.jpg',
+        'assets/blog-5/blog5-5.jpg',
+        'assets/blog-5/blog5-6.jpg',
+        'assets/blog-5/blog5-7.jpg',
+        'assets/blog-5/blog5-8.jpg'
+      ],
+      videos: [],
+      tags: ['Éducation', 'BAC 1', 'Examen', 'Jeunesse']
+    },
+    {
+      id: 'cohesion-sociale-tournee-sensibilisation',
+      titre: 'Cohésion sociale : le maire en tournée de sensibilisation',
+      sousTitre: 'Tchamba 1 / Cohésion sociale',
+      date: '11 mai 2026',
+      auteur: 'Bureau de l\'Information et de la Presse / Tchamba 1',
+      resume: 'Le maire de Tchamba 1, Hamza Titikpina, a entamé une tournée de sensibilisation auprès des jeunes écoliers et non écoliers sur les thèmes de la cohésion sociale et du civisme, afin de promouvoir les valeurs de paix, de tolérance et de citoyenneté.',
+      contenu: `Le maire de la commune de Tchamba 1, Monsieur Hamza Titikpina, a entamé le lundi 11 mai 2026, à Tchamba, une tournée de sensibilisation auprès des jeunes écoliers et non écoliers sur les thèmes de la cohésion sociale et du civisme.
+
+Initiée à la demande des plus hauts cadres de la commune, cette campagne vise à promouvoir auprès de la jeunesse les valeurs de paix, de tolérance, de civisme et de citoyenneté. L'objectif est de susciter l'intérêt des jeunes pour les initiatives citoyennes et de les encourager à incarner les valeurs républicaines et traditionnelles locales.
+
+A l'entame de cette tournée, le maire Titikpina s'est entretenu avec les élèves du Lycée Tchamba Ville et ceux du secondaire 1 du Lycée Tchamba. Il a également échangé avec les communautés des quartiers Djariwa, N'Kpendja, Boupépoh, Ditampouri et Dabawa.
+
+Dans son message, le premier magistrat de la commune a exhorté les apprenants à adopter des comportements responsables et civiques : « Les fonctions de préfet, de maire, de ministre, etc., seront les vôtres demain. Mais vous ne les mériterez que si vous êtes porteurs de valeurs de civisme, de patriotisme et de citoyenneté, et si vous cultivez l'excellence », a-t-il déclaré.
+
+S'adressant aux jeunes des quartiers, il a rappelé qu'ils représentent non seulement la relève de demain, mais aussi des acteurs incontournables du développement à la base, tel que pensé par le Président du Conseil, Faure Essozimna Gnassingbé, à travers la politique de décentralisation. Il les a invités à privilégier, en toute circonstance, le dialogue et la tolérance plutôt que la violence.
+
+À chaque étape, le maire a insisté sur la nécessité de contribuer à la prévention de l'extrémisme violent. « Le gouvernement ne ménage aucun effort pour assurer la paix et la sécurité de tous. Nous avons l'obligation d'aider à prévenir l'insécurité en collaborant avec les autorités et les Forces de l'Ordre », a-t-il ajouté.
+
+La présidente du Comité Local de Paix (CLP Missomsom yah) de Tchamba, Mme Christine Alika, présente à cette première journée, a salué l'initiative du maire. Elle en a profité pour sensibiliser l'assistance à la culture de la paix : « Chacun de nous aspire à la prospérité, à l'autonomie financière et à bien d'autres choses. Mais rien de tout cela n'est possible sans la paix », a-t-elle souligné.
+
+Le lancement de cette tournée s'est déroulé en présence de l'Inspecteur du second degré, M. Athanase Sekpane, des responsables d'établissements scolaires, des enseignants, des parents d'élèves ainsi que des chefs traditionnels et religieux.
+
+La tournée se poursuit jusqu'au 23 mai prochain.`,
+      imagePrincipale: 'assets/blog-6/blog6-1.jpg',
+      images: [
+        'assets/blog-6/blog6-1.jpg',
+        'assets/blog-6/blog6-2.jpg',
+        'assets/blog-6/blog6-3.jpg',
+        'assets/blog-6/blog6-4.jpg',
+        'assets/blog-6/blog6-5.jpg',
+        'assets/blog-6/blog6-6.jpg',
+        'assets/blog-6/blog6-7.jpg'
+      ],
+      videos: [],
+      tags: ['Cohésion sociale', 'Civisme', 'Jeunesse', 'Paix']
+    },
+    {
+      id: 'cohesion-sociale-etape-dagma',
+      titre: 'Cohésion sociale : le maire à l\'étape du village de Dagma',
+      sousTitre: 'Tchamba 1 / Cohésion sociale',
+      date: 'mai 2026',
+      auteur: 'Bureau de l\'Information et de la Presse / Tchamba 1',
+      resume: 'Poursuivant sa tournée de sensibilisation sur la cohésion sociale et le civisme, le maire de Tchamba 1, Hamza Titikpina, a fait étape au village de Dagma, à la rencontre des écoliers et des populations, pour promouvoir les valeurs de paix, de tolérance et de citoyenneté.',
+      contenu: `Dans le cadre de sa tournée de sensibilisation sur les thèmes de la cohésion sociale et du civisme, le maire de la commune de Tchamba 1, Monsieur Hamza Titikpina, a fait étape au village de Dagma, à la rencontre des jeunes écoliers et des populations.
+
+Initiée à la demande des plus hauts cadres de la commune, cette campagne vise à promouvoir auprès de la jeunesse les valeurs de paix, de tolérance, de civisme et de citoyenneté. L'objectif est de susciter l'intérêt des jeunes pour les initiatives citoyennes et de les encourager à incarner les valeurs républicaines et traditionnelles locales.
+
+À Dagma, le premier magistrat de la commune s'est entretenu avec les écoliers ainsi qu'avec les communautés du village. Dans son message, il a exhorté les apprenants à adopter des comportements responsables et civiques : « Les fonctions de préfet, de maire, de ministre, etc., seront les vôtres demain. Mais vous ne les mériterez que si vous êtes porteurs de valeurs de civisme, de patriotisme et de citoyenneté, et si vous cultivez l'excellence », a-t-il déclaré.
+
+S'adressant aux jeunes, il a rappelé qu'ils représentent non seulement la relève de demain, mais aussi des acteurs incontournables du développement à la base, tel que pensé par le Président du Conseil, Faure Essozimna Gnassingbé, à travers la politique de décentralisation. Il les a invités à privilégier, en toute circonstance, le dialogue et la tolérance plutôt que la violence.
+
+Comme à chaque étape de la tournée, le maire a insisté sur la nécessité de contribuer à la prévention de l'extrémisme violent. « Le gouvernement ne ménage aucun effort pour assurer la paix et la sécurité de tous. Nous avons l'obligation d'aider à prévenir l'insécurité en collaborant avec les autorités et les Forces de l'Ordre », a-t-il ajouté.
+
+L'étape de Dagma s'est déroulée en présence des responsables d'établissements scolaires, des enseignants, des parents d'élèves ainsi que des chefs traditionnels et religieux, dans un esprit d'échange et de mobilisation autour des valeurs de paix et de vivre-ensemble.`,
+      imagePrincipale: 'assets/blog-7/blog7-1.jpg',
+      images: [
+        'assets/blog-7/blog7-1.jpg',
+        'assets/blog-7/blog7-2.jpg',
+        'assets/blog-7/blog7-4.jpg',
+        'assets/blog-7/blog7-5.jpg',
+        'assets/blog-7/blog7-6.jpg',
+        'assets/blog-7/blog7-7.jpg',
+        'assets/blog-7/blog7-8.jpg',
+        'assets/blog-7/blog7-9.jpg',
+        'assets/blog-7/blog7-10.jpg'
+      ],
+      videos: [
+        'assets/blog-7/blog7-1.mp4',
+        'assets/blog-7/blog7-2.mp4',
+        'assets/blog-7/blog7-3.mp4',
+        'assets/blog-7/blog7-4.mp4',
+        'assets/blog-7/blog7-5.mp4'
+      ],
+      tags: ['Cohésion sociale', 'Civisme', 'Jeunesse', 'Paix', 'Dagma']
+    },
+    {
       id: 'togo-propre-salubrite',
       titre: 'Forte mobilisation citoyenne autour de l\'opération nationale de salubrité « Togo Propre »',
       sousTitre: 'Tchamba 1 / Salubrité',
